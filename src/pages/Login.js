@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Box,Button,TextField,Typography} from '@mui/material'
 import { Link } from 'react-router-dom';
 import logo from '../assests/images/logo.png'
+import Navbar from '../components/navbar/Navbar';
 
 
 const Login = () => {
@@ -19,11 +20,13 @@ const handleChange = (e) =>{
 }
 
 const handleSubmit =(e)=>{
+    e.preventDefault()
     console.log(inputs);
 }
 
   return (
     <div>
+        <Navbar/>
         <Box 
         display={"flex"} 
         flexDirection={"column"} 
@@ -69,11 +72,16 @@ const handleSubmit =(e)=>{
             />
             
             <Button
+            
             onClick={handleSubmit}
             sx={{marginTop:3 , borderRadius:2}} 
             variant='contained' 
             color='warning'
+            href='/login'
             >Login</Button>
+
+    
+
             
             <Link style={{marginTop:20, textDecoration:'none', color:'gray'} }  to="/register">Change to Signup</Link>
         </Box>

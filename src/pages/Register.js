@@ -3,6 +3,7 @@ import {Alert, Box,Button,FormControl,InputLabel,MenuItem,Select,Snackbar,TextFi
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import logo from '../assests/images/logo.png'
+import Navbar from '../components/navbar/Navbar';
 
 const Register = () => {
 
@@ -71,6 +72,7 @@ axios(config)
             }
         }}
         >
+            <Navbar/>
             <Box display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
 
               <img style={{width:60,justifyContent:'center'}} src={`${logo}`} alt='' />
@@ -149,6 +151,7 @@ axios(config)
             variant='contained' 
             color='warning'
              onClick={(e)=>handleSubmit(e)}
+             href='/login'
             >Register</Button>
             <Link style={{marginTop:20, textDecoration:'none', color:'gray'} } to={'/'}>Change to login</Link>
         </Box>
